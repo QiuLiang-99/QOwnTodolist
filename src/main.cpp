@@ -33,7 +33,9 @@ int main(int argc, char* argv[]) {
   bool      allowOnlyOneAppInstance = true;
   QSettings settings;
   QSettings::setDefaultFormat(QSettings::IniFormat);
-
+  QCoreApplication::setOrganizationDomain(QStringLiteral("QOwnTodolist"));
+  QCoreApplication::setOrganizationName(QStringLiteral("QOwnTodolist"));
+  QCoreApplication::setApplicationName(QStringLiteral("QOwnTodolist"));
   // if allowOnlyOneAppInstance still has the default true let's ask the
   // settings
   if (allowOnlyOneAppInstance) {
