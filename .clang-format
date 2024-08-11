@@ -1,0 +1,56 @@
+BasedOnStyle: LLVM # 基于LLVM风格
+AccessModifierOffset:	0 # 访问说明符(public、private等)的偏移(缩进或者对齐)
+AlignConsecutiveAssignments: # 连续赋值时，对齐所有等号
+  Enabled: true # 启用
+  AcrossEmptyLines: true # 跨越空行
+  AcrossComments: true # 跨越注释
+  AlignCompound: true # 对齐复合类型
+  PadOperators: true # 操作符两边添加空格
+AlignConsecutiveBitFields: # 主要用于结构体位段的对齐
+  Enabled: true # 启用
+  AcrossEmptyLines: true # 跨越空行
+  AcrossComments: true # 跨越注释
+AlignConsecutiveDeclarations: # 连续声明对齐
+  Enabled: true # 启用
+  AcrossEmptyLines: false # 不跨越空行
+  AcrossComments: true # 跨越注释
+AlignTrailingComments: # 对齐尾随注释
+  Kind: Always # 总是对齐
+  OverEmptyLines: 1 # 跨越一个空行
+AllowShortBlocksOnASingleLine: Always # 允许单行代码块
+AllowShortEnumsOnASingleLine: false # 不允许单行枚举
+AllowShortFunctionsOnASingleLine: All # 允许单行函数
+AllowShortIfStatementsOnASingleLine: WithoutElse # 不允许单行if语句
+AllowShortLambdasOnASingleLine: None # 不允许单行lambda
+SpaceBeforeParensOptions: # 控制括号前的空格
+  AfterControlStatements: true # 控制语句后
+BraceWrapping: # 大括号换行控制
+  AfterEnum: true # 枚举后
+  AfterFunction: true # 函数后
+  AfterNamespace: true # 命名空间后
+  AfterStruct: true # 结构体后
+  AfterUnion: false # 联合体后
+  BeforeElse: false # Else前
+BreakBeforeBraces: Attach # 在大括号前换行
+BreakBeforeTernaryOperators: false # 三元运算符前不换行
+BreakConstructorInitializers: AfterColon # 构造函数初始化列表在冒号后换行
+BreakInheritanceList: AfterColon # 继承列表在冒号后换行
+Cpp11BracedListStyle: true # C++11的大括号列表风格
+DerivePointerAlignment: false  # 确保*或&在左边对齐
+EmptyLineBeforeAccessModifier: Always # 访问修饰符前总是有空行
+IndentAccessModifiers: true # 缩进访问修饰符
+PointerAlignment: Left # 指针对齐在左边
+ReferenceAlignment: Left # 引用对齐在左边
+AlwaysBreakTemplateDeclarations: Yes # 模板声明总是换行
+IndentWrappedFunctionNames: true # 缩进包装过的函数名
+AllowAllParametersOfDeclarationOnNextLine: true # 允许所有声明的参数在下一行
+AllowAllArgumentsOnNextLine: true # 允许所有参数在下一行
+ExperimentalAutoDetectBinPacking: false # 实验性的自动检测二进制打包
+BinPackParameters: false # 不进行参数二进制打包
+PenaltyReturnTypeOnItsOwnLine: 600000 # 返回类型在其自己的行上的惩罚
+AlwaysBreakAfterReturnType: None # 返回类型后总是换行
+AlwaysBreakAfterDefinitionReturnType: None # 定义返回类型后总是换行
+CommentPragmas: '^ IWYU pragma:' # 注释指令
+PenaltyBreakComment: 300 # 注释换行的惩罚
+QualifierAlignment: Leave # 限定符对齐
+NamespaceIndentation: All # 命名空间缩进
