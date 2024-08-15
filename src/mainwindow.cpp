@@ -1,17 +1,20 @@
 #include "mainwindow.h"
 
 #include <QAction>
+#include <QGridLayout>
 #include <QPushButton>
 #include <QSettings>
 #include <QTimer>
 #include <QToolBar>
+#include <qlogging.h>
+#include <qwidget.h>
 
 static MainWindow* self = nullptr;
 MainWindow*        MainWindow::instance() { return self; }
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-
   self = this;
+  qDebug() << this->layout();
   readSettings();
   setupUi();
 }
@@ -19,16 +22,24 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 MainWindow::~MainWindow() { storeSettings(); }
 
 void MainWindow::setupUi() {
-  QPushButton* test = new QPushButton("Hello World", this);
+  m_layout          = new QGridLayout;
+  QPushButton* test = new QPushButton("Hello World");
+  m_layout->addWidget(test, 0, 0);
   setupToolbars();
+  setCentralWidget(new QWidget);
+  centralWidget()->setLayout(m_layout);
 }
 
 void MainWindow::setupToolbars() {
-  _quitToolbar         = new QToolBar(tr("quit toolbar"), this);
+  _quitToolbar         = new QToolBar(tr("quit toolbar"));
   QAction* action_Quit = new QAction(tr("Quit"), this);
   _quitToolbar->addAction(action_Quit);
   _quitToolbar->setObjectName(QStringLiteral("quitToolbar"));
+  connect(action_Quit, &QAction::triggered, this, [&] {
+    qDebug() << "ojk";
+  });
   addToolBar(_quitToolbar);
+  // m_layout->addWidget(_quitToolbar, 0, 1);
 }
 
 void MainWindow::readSettings() {
