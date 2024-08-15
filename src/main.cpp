@@ -5,7 +5,6 @@
 #include <QLocale>
 #include <QSettings>
 #include <QTranslator>
-#include <qapplication.h>
 #include <qlogging.h>
 
 #include "utils/misc.h"
