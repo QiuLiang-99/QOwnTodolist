@@ -36,7 +36,7 @@ void MainWindow::setupToolbars() {
   _quitToolbar->addAction(action_Quit);
   _quitToolbar->setObjectName(QStringLiteral("quitToolbar"));
   connect(action_Quit, &QAction::triggered, this, [&] {
-    qDebug() << "ojk";
+    qDebug() << "ojbk";
   });
   addToolBar(_quitToolbar);
   // m_layout->addWidget(_quitToolbar, 0, 1);
