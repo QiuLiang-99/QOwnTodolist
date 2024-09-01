@@ -8,7 +8,7 @@
 #include <qlogging.h>
 
 #include "utils/misc.h"
-
+// class TorrentContentFilterModel final : public QSortFilterProxyModel
 /**
  * Function for loading a translation with debug output
  */
