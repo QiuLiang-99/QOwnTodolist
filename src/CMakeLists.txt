@@ -10,7 +10,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS REQUIRED
+    LinguistTools
+    Core
+    Widgets
+    Gui
+    Sql
+    Svg
+    Network
+    Xml
+)
 # Translation files
 set(TS_FILES languages/QOwnTodolist_zh_CN.ts)
 
@@ -28,7 +37,10 @@ qt_add_executable(QOwnTodolist
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 
-target_link_libraries(QOwnTodolist PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(QOwnTodolist PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Sql
+)
 
 set_target_properties(QOwnTodolist PROPERTIES
     ${BUNDLE_ID_OPTION}
