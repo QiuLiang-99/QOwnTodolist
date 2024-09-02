@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "gui/widgets/mainwindow.h"
 
 #include <QApplication>
 #include <QLibraryInfo>
