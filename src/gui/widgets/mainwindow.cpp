@@ -29,7 +29,8 @@ void MainWindow::setupUi() {
   setCentralWidget(new QWidget);
   centralWidget()->setLayout(m_layout);
 
-  _sidebar = new VerticalSidebar(this);
+  _sidebar = new VerticalSidebar;
+  m_layout->addWidget(_sidebar, 0, 0);
 }
 
 void MainWindow::setupToolbars() {
