@@ -23,10 +23,19 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS REQUIRED
 # Translation files
 set(TS_FILES languages/QOwnTodolist_zh_CN.ts)
 
+file(GLOB_RECURSE srcs ${PROJECT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE headers ${PROJECT_SOURCE_DIR}/*.h)
+
+# 打印 srcs 变量的内容
+message(STATUS "Source files: ${srcs}")
+
+# 打印 headers 变量的内容
+message(STATUS "Header files: ${headers}")
+
+
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
+        ${srcs}
+        ${headers}
         ${TS_FILES}
 )
 
