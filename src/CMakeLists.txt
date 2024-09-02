@@ -51,6 +51,11 @@ target_link_libraries(QOwnTodolist PRIVATE
     Qt${QT_VERSION_MAJOR}::Sql
 )
 
+target_include_directories(QOwnTodolist PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+
 set_target_properties(QOwnTodolist PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}

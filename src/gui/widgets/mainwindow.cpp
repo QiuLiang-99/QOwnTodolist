@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include "gui/component/verticalsidebar.h"
 #include <QAction>
 #include <QGridLayout>
 #include <QPushButton>
@@ -28,6 +28,8 @@ void MainWindow::setupUi() {
   setupToolbars();
   setCentralWidget(new QWidget);
   centralWidget()->setLayout(m_layout);
+
+  _sidebar = new VerticalSidebar(this);
 }
 
 void MainWindow::setupToolbars() {

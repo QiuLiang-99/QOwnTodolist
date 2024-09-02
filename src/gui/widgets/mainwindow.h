@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 class QGridLayout;
+
+class VerticalSidebar;
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -20,7 +22,8 @@ class MainWindow : public QMainWindow {
     void storeSettings();
 
   private:
-    QGridLayout* m_layout;
-    QToolBar*    _quitToolbar;
+    QGridLayout*     m_layout;
+    QToolBar*        _quitToolbar;
+    VerticalSidebar* _sidebar;
 };
 #endif // MAINWINDOW_H
