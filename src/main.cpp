@@ -1,7 +1,6 @@
 #include "gui/widgets/mainwindow.h"
 
-#include "ElaApplication.h"
-#include "ElaWindow.h"
+#include <ElaApplication.h>
 #include <QApplication>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -68,7 +67,5 @@ int main(int argc, char* argv[]) {
   eApp->init();
   MainWindow w;
   w.show();
-  ElaWindow ela;
-  ela.show();
   return a.exec();
 }

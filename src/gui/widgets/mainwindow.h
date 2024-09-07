@@ -1,11 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-class QGridLayout;
-
-class VerticalSidebar;
-class MainWindow : public QMainWindow {
+#include <ElaWindow.h>
+class MainWindow : public ElaWindow {
     Q_OBJECT
 
   public:
@@ -18,12 +15,11 @@ class MainWindow : public QMainWindow {
   public:
     void setupUi();
     void setupToolbars();
+    
     void readSettings();
     void storeSettings();
 
   private:
-    QGridLayout*     m_layout;
-    QToolBar*        _quitToolbar;
-    VerticalSidebar* _sidebar;
+
 };
 #endif // MAINWINDOW_H
