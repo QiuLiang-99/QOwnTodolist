@@ -8,7 +8,7 @@ if(WIN32)
         IMPORTED_IMPLIB               ${ElaWidgetTools_dir}/lib/libelawidgettools.a
         INTERFACE_INCLUDE_DIRECTORIES ${ElaWidgetTools_dir}/include
     )
-    file(COPY ${ElaWidgetTools_dir}/lib/elawidgettools.dll DESTINATION ${CMAKE_BINARY_DIR}src/Debug)
+    file(COPY ${ElaWidgetTools_dir}/lib/elawidgettools.dll DESTINATION ${CMAKE_BINARY_DIR}/src/Debug)
 elseif(ANDROID)
     # 针对Android的配置
     # ElaWidgetTools 无安卓版本

@@ -26,13 +26,6 @@ set(TS_FILES languages/QOwnTodolist_zh_CN.ts)
 file(GLOB_RECURSE srcs ${PROJECT_SOURCE_DIR}/*.cpp)
 file(GLOB_RECURSE headers ${PROJECT_SOURCE_DIR}/*.h)
 
-# 打印 srcs 变量的内容
-message(STATUS "Source files: ${srcs}")
-
-# 打印 headers 变量的内容
-message(STATUS "Header files: ${headers}")
-
-
 set(PROJECT_SOURCES
         ${srcs}
         ${headers}
@@ -50,6 +43,12 @@ target_link_libraries(QOwnTodolist PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Sql
 )
+target_compile_definitions(QOwnTodolist PRIVATE -D_BUILDING_QX_QOT)#添加构建参数表明正在构建此项目
+
+if(COMMAND target_precompile_headers)
+   target_precompile_headers(QOwnTodolist PRIVATE ./core/database/precompiled.h)
+endif() # (COMMAND target_precompile_headers)
+include(QxOrm)
 
 target_include_directories(QOwnTodolist PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}
