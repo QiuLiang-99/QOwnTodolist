@@ -49,6 +49,7 @@ if(COMMAND target_precompile_headers)
    target_precompile_headers(QOwnTodolist PRIVATE ./core/database/precompiled.h)
 endif() # (COMMAND target_precompile_headers)
 include(QxOrm)
+include(ElaWidgetTools)
 
 target_include_directories(QOwnTodolist PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}

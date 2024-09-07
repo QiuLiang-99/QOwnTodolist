@@ -1,5 +1,7 @@
 #include "gui/widgets/mainwindow.h"
 
+#include "ElaApplication.h"
+#include "ElaWindow.h"
 #include <QApplication>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -63,8 +65,10 @@ int main(int argc, char* argv[]) {
   loadTranslation(translator, locale);
 
   qDebug() << "Current locale: " << QLocale::system().name();
-
+  eApp->init();
   MainWindow w;
   w.show();
+  ElaWindow ela;
+  ela.show();
   return a.exec();
 }
