@@ -6,7 +6,6 @@
 #include <QVBoxLayout>
 #include <qlabel.h>
 
-
 VerticalSidebar::VerticalSidebar(QWidget* parent) :
     QWidget(parent), layout(new QVBoxLayout(this)),
     avatarLabel(new QLabel(this)) {
@@ -32,7 +31,7 @@ VerticalSidebar::VerticalSidebar(QWidget* parent) :
   layout->addWidget(btn3);
   layout->addWidget(btn4);
   layout->addWidget(btn5);
-layout->addWidget(new QLabel("Hello World"));
+  layout->addWidget(new QLabel("Hello World"));
   layout->addStretch(); // 在按钮和底部控件之间添加一个弹性空间
 
   // 添加底部的按钮
