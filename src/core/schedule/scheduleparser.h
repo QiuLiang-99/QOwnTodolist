@@ -1,29 +1,21 @@
 #ifndef SCHEDULEPARSER_H
 #define SCHEDULEPARSER_H
 
+#include "core/database/course.h"
 #include <QList>
 #include <QString>
+#include <qtmetamacros.h>
 
-
-class ScheduleParser
-{
-public:
+class ScheduleParser {
+  public:
     ScheduleParser();
     ~ScheduleParser();
+  public:
+    static void selectFile();
+    static void parse(const QString& path);
 
-    void parse(const QString &schedule);
-    QList<int> getDays() const;
-    QList<int> getPeriods() const;
-    QList<int> getRooms() const;
-    QList<int> getTeachers() const;
-    QList<int> getCourses() const;
-
-private:
-    QList<int> m_days;
-    QList<int> m_periods;
-    QList<int> m_rooms;
-    QList<int> m_teachers;
-    QList<int> m_courses;
+  private:
+  static course analyzeCourse(const QJsonObject& courseObject);
 };
 
 #endif // SCHEDULEPARSER_H
