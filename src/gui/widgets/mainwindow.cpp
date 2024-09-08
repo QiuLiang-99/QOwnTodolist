@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "gui/widgets/calendarwindow.h"
+#include "schedulewidget.h"
 #include <ElaDockWidget.h>
 #include <ElaMenu.h>
 #include <ElaMenuBar.h>
@@ -17,7 +19,7 @@ MainWindow::MainWindow(QWidget* parent) : ElaWindow(parent) {
   self = this;
   // setIsEnableMica(true);
   setWindowIcon(QIcon(":/include/Image/Cirno.jpg"));
-  resize(1200, 740);
+  //resize(1200, 740);
   // ElaLog::getInstance()->initMessageLog(true);
   // eApp->setThemeMode(ElaThemeType::Dark);
   // setIsNavigationBarEnable(false);
@@ -159,6 +161,10 @@ void MainWindow::setupUi() {
   statusText->setTextPixelSize(14);
   statusBar->addWidget(statusText);
   this->setStatusBar(statusBar);
+
+  //左侧按钮列表
+  addPageNode("HOME", new CalendarWindow, ElaIconType::House);
+  addPageNode("CALENDAR", new ScheduleWidget, ElaIconType::Calendar);
 }
 
 void MainWindow::setupToolbars() {}
