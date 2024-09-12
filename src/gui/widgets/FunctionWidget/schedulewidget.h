@@ -1,9 +1,9 @@
 #ifndef SCHEDULEWIDGET_H
 #define SCHEDULEWIDGET_H
 
-#include "functionwindow.h"
+#include "FunctionWidget.h"
 
-class ScheduleWidget : public FunctionWindow {
+class ScheduleWidget : public FunctionWidget {
     Q_OBJECT
 
   public:

@@ -3,7 +3,7 @@
 #include <qboxlayout.h>
 #include <qpushbutton.h>
 
-ScheduleWidget::ScheduleWidget(QWidget* parent) : FunctionWindow(parent) {
+ScheduleWidget::ScheduleWidget(QWidget* parent) : FunctionWidget(parent) {
   auto layout = new QVBoxLayout(this);
   auto button = new QPushButton("导入", this);
   layout->addWidget(button);

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "gui/widgets/calendarwindow.h"
-#include "schedulewidget.h"
+//#include "gui/widgets/calendarwindow.h"
+#include "FunctionWidget/schedulewidget.h"
 #include <ElaDockWidget.h>
 #include <ElaMenu.h>
 #include <ElaMenuBar.h>
@@ -11,6 +11,7 @@
 #include <ElaToolButton.h>
 #include <QSettings>
 #include <QVBoxLayout>
+#include <qwidget.h>
 
 static MainWindow* self = nullptr;
 MainWindow*        MainWindow::instance() { return self; }
@@ -163,8 +164,8 @@ void MainWindow::setupUi() {
   this->setStatusBar(statusBar);
 
   //左侧按钮列表
-  addPageNode("HOME", new CalendarWindow, ElaIconType::House);
-  addPageNode("CALENDAR", new ScheduleWidget, ElaIconType::Calendar);
+  addPageNode("HOME", new QWidget, ElaIconType::House);
+  //addPageNode("CALENDAR", new ScheduleWidget, ElaIconType::Calendar);
 }
 
 void MainWindow::setupToolbars() {}
