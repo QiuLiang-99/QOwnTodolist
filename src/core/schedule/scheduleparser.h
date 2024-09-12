@@ -1,7 +1,7 @@
 #ifndef SCHEDULEPARSER_H
 #define SCHEDULEPARSER_H
 
-#include "core/database/course.h"
+#include "core/database/model/course.h"
 #include <QList>
 #include <QString>
 #include <qtmetamacros.h>

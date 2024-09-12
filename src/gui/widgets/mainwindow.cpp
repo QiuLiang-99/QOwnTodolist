@@ -27,14 +27,15 @@ MainWindow::MainWindow(QWidget* parent) : ElaWindow(parent) {
   // setNavigationBarDisplayMode(ElaNavigationType::Compact);
   // setWindowButtonFlag(ElaAppBarType::MinimizeButtonHint, false);
   // setUserInfoCardPixmap(QPixmap(":/Resource/Image/Cirno.jpg"));
-  setUserInfoCardTitle("Ela Tool");
-  setUserInfoCardSubTitle("Liniyous@gmail.com");
-  setWindowTitle("ElaWidgetTool");
+  setUserInfoCardTitle("Q  L  ");
+  //setUserInfoCardSubTitle("Liniyous@gmail.com");
+  setWindowTitle("QOwnTodolist");
   // setIsStayTop(true);
   // setUserInfoCardVisible(false);
 
   readSettings();
   setupUi();
+  setupFunctionWidgets();
 }
 
 MainWindow::~MainWindow() { storeSettings(); }
@@ -62,7 +63,7 @@ void MainWindow::setupUi() {
   iconMenu->addSeparator();
   iconMenu->addElaIconAction(ElaIconType::ArrowRotateRight, "刷新");
   iconMenu->addElaIconAction(ElaIconType::ArrowRotateLeft, "撤销");
-  menuBar->addSeparator();
+  //menuBar->addSeparator();
   ElaMenu* shortCutMenu = new ElaMenu("快捷菜单(&A)", this);
   shortCutMenu->setMenuItemHeight(27);
   shortCutMenu->addElaIconAction(ElaIconType::BoxCheck, "排序方式",
@@ -163,10 +164,13 @@ void MainWindow::setupUi() {
   statusBar->addWidget(statusText);
   this->setStatusBar(statusBar);
 
+}
+void MainWindow::setupFunctionWidgets() {
   //左侧按钮列表
   addPageNode("HOME", new QWidget, ElaIconType::House);
-  //addPageNode("CALENDAR", new ScheduleWidget, ElaIconType::Calendar);
+  addPageNode("课表", new ScheduleWidget, ElaIconType::Calendar);
 }
+
 
 void MainWindow::setupToolbars() {}
 

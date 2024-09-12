@@ -15,11 +15,12 @@ class MainWindow : public ElaWindow {
   public:
     void setupUi();
     void setupToolbars();
-    
+    void setupFunctionWidgets();
     void readSettings();
     void storeSettings();
 
   private:
+  //void addFunctionWidget(QWidget* widget, const QString& title, const QString& iconPath);
 
 };
 #endif // MAINWINDOW_H
