@@ -1,28 +1,24 @@
 {
     "configurations": [
-        {
-            "name": "Debug Qt Application with cppdbg",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${command:cmake.launchTargetPath}",
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "visualizerFile": "${command:qt-official.natvis}",
-            "showDisplayString": true,
-            "windows": {
-                "environment": [
-                    {
-                        "name": "PATH",
-                        "value": "${env:PATH};${command:qt-official.kitDirectory}${/}bin"
-                    },
-                    {
-                        "name": "QXORM_DIR",
-                        "value": "D:/Program/lib/QxOrm-1.4.9"
-                    }
-                ],
-                "MIMode": "gdb",
-                "miDebuggerPath": "${command:qt-official.minGWgdb}"
-            }
+    {
+        "name": "Debug Qt Application with cppdbg",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${command:cmake.launchTargetPath}",
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "visualizerFile": "${command:qt-cpp.natvis}",
+        "showDisplayString": true,
+        "windows": {
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${env:PATH};${command:qt-cpp.kitDirectory}${/}bin"
+                }
+            ],
+            "MIMode": "gdb",
+            "miDebuggerPath": "${command:qt-cpp.minGWgdb}"
         }
+    }
     ]
 }

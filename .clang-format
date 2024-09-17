@@ -51,6 +51,7 @@ PenaltyReturnTypeOnItsOwnLine: 600000 # 返回类型在其自己的行上的惩�
 AlwaysBreakAfterReturnType: None # 返回类型后总是换行
 AlwaysBreakAfterDefinitionReturnType: None # 定义返回类型后总是换行
 CommentPragmas: '^ IWYU pragma:' # 注释指令
-PenaltyBreakComment: 300 # 注释换行的惩罚
+PenaltyBreakComment: 500 # 注释换行的惩罚
 QualifierAlignment: Leave # 限定符对齐
 NamespaceIndentation: All # 命名空间缩进
+#PenaltyBreakAssignment:5000 # 赋值换行的惩罚

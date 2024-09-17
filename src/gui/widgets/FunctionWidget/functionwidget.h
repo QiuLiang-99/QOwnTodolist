@@ -1,9 +1,9 @@
 #ifndef FUNCTIONWIDGET_H
 #define FUNCTIONWIDGET_H
 
-#include <ElaScrollPage.h>
+#include <QWidget>
 
-class FunctionWidget : public ElaScrollPage {
+class FunctionWidget : public QWidget {
     Q_OBJECT
 
   public:

@@ -19,3 +19,21 @@ template <> void register_class(QxClass<course> & t)
     t.data(& course::endWeek, "endWeek");
     t.data(& course::type, "type");
 }}// namespace qx
+
+QDebug operator<<(QDebug dbg, const course &c) {
+    dbg.nospace() << "course("
+                  << "id: " << c.id << ", "
+                  << "courseName: " << c.courseName << ", "
+                  << "teacher: " << c.teacher << ", "
+                  << "room: " << c.room << ", "
+                  << "timeInfo: " << c.timeInfo << ", "
+                  << "weekInfo: " << c.weekInfo << ", "
+                  << "start: " << c.start << ", "
+                  << "end: " << c.end << ", "
+                  << "startWeek: " << c.startWeek << ", "
+                  << "endWeek: " << c.endWeek << ", "
+                  << "dayOfWeek: " << c.dayOfWeek << ", "
+                  << "type: " << static_cast<int>(c.type)
+                  << ")";
+    return dbg.space();
+}

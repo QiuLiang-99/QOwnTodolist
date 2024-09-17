@@ -10,12 +10,14 @@ class ScheduleParser {
   public:
     ScheduleParser();
     ~ScheduleParser();
+
   public:
     static void selectFile();
     static void parse(const QString& path);
 
   private:
-  static course analyzeCourse(const QJsonObject& courseObject);
+    static course analyzeCourseObject(const QJsonObject& c);
+    static course analyzeCourseInfo(course& c);
 };
 
 #endif // SCHEDULEPARSER_H
