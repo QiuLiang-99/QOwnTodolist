@@ -19,6 +19,7 @@ struct QX_QOT_DLL_EXPORT course {
     int        endWeek;
     int        dayOfWeek;
     courseType type;
+    // todo 课表归于一个课程表
 };
 QX_REGISTER_HPP_QX_QOT(course, qx::trait::no_base_class_defined, 0)
 
