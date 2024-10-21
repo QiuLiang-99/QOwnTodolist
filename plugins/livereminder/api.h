@@ -1,4 +1,5 @@
 #include <QUrl>
+#include <qsettings.h>
 
 namespace LR {
   namespace api {
@@ -6,3 +7,4 @@ namespace LR {
         QUrl("https://www.huya.com/udb_web/checkLogin.php", QUrl::StrictMode);
   } // namespace api
 } // namespace LR
+QSettings settings("livereminder", "livereminder");
