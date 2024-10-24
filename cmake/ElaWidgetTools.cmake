@@ -4,11 +4,11 @@ set(ElaWidgetTools_dir "D:/Program/lib/ElaWidgetTools")#设置ElaWidgetTools库�
 if(WIN32)
     # 针对Windows的配置
     set_target_properties(ElaWidgetTools PROPERTIES
-        IMPORTED_LOCATION             ${ElaWidgetTools_dir}/lib/elawidgettools.dll
-        IMPORTED_IMPLIB               ${ElaWidgetTools_dir}/lib/libelawidgettools.a
+        IMPORTED_LOCATION             ${ElaWidgetTools_dir}/lib/elawidgettoolsd.dll
+        IMPORTED_IMPLIB               ${ElaWidgetTools_dir}/lib/elawidgettoolsd.lib
         INTERFACE_INCLUDE_DIRECTORIES ${ElaWidgetTools_dir}/include
     )
-    file(COPY ${ElaWidgetTools_dir}/lib/elawidgettools.dll DESTINATION ${CMAKE_BINARY_DIR}/src/Debug)
+    file(COPY ${ElaWidgetTools_dir}/lib/elawidgettoolsd.dll DESTINATION ${CMAKE_BINARY_DIR}/src/Debug)
 elseif(ANDROID)
     # 针对Android的配置
     # ElaWidgetTools 无安卓版本
