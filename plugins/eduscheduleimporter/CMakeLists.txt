@@ -18,6 +18,7 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS REQUIRED
     Sql
     Network
 )
+find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 file(GLOB_RECURSE srcs ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE headers ${PROJECT_SOURCE_DIR}/src/*.h)
 set(PROJECT_SOURCES
@@ -33,6 +34,7 @@ target_link_libraries(EduScheduleImporter PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Sql
 )
+target_link_libraries(EduScheduleImporter PRIVATE Qt6::WebEngineWidgets)
 target_include_directories(EduScheduleImporter PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
