@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-//#include "gui/widgets/calendarwindow.h"
-#include "FunctionWidget/schedulewidget.h"
+// #include "gui/widgets/calendarwindow.h"
+#include "widgets/FunctionWidget/schedulewidget.h"
 #include <ElaDockWidget.h>
 #include <ElaMenu.h>
 #include <ElaMenuBar.h>
@@ -20,15 +20,15 @@ MainWindow::MainWindow(QWidget* parent) : ElaWindow(parent) {
   self = this;
   // setIsEnableMica(true);
   setWindowIcon(QIcon(":/include/Image/Cirno.jpg"));
-  //resize(1200, 740);
-  // ElaLog::getInstance()->initMessageLog(true);
-  // eApp->setThemeMode(ElaThemeType::Dark);
-  // setIsNavigationBarEnable(false);
-  // setNavigationBarDisplayMode(ElaNavigationType::Compact);
-  // setWindowButtonFlag(ElaAppBarType::MinimizeButtonHint, false);
-  // setUserInfoCardPixmap(QPixmap(":/Resource/Image/Cirno.jpg"));
+  // resize(1200, 740);
+  //  ElaLog::getInstance()->initMessageLog(true);
+  //  eApp->setThemeMode(ElaThemeType::Dark);
+  //  setIsNavigationBarEnable(false);
+  //  setNavigationBarDisplayMode(ElaNavigationType::Compact);
+  //  setWindowButtonFlag(ElaAppBarType::MinimizeButtonHint, false);
+  //  setUserInfoCardPixmap(QPixmap(":/Resource/Image/Cirno.jpg"));
   setUserInfoCardTitle("Q  L  ");
-  //setUserInfoCardSubTitle("Liniyous@gmail.com");
+  // setUserInfoCardSubTitle("Liniyous@gmail.com");
   setWindowTitle("QOwnTodolist");
   // setIsStayTop(true);
   // setUserInfoCardVisible(false);
@@ -63,7 +63,7 @@ void MainWindow::setupUi() {
   iconMenu->addSeparator();
   iconMenu->addElaIconAction(ElaIconType::ArrowRotateRight, "刷新");
   iconMenu->addElaIconAction(ElaIconType::ArrowRotateLeft, "撤销");
-  //menuBar->addSeparator();
+  // menuBar->addSeparator();
   ElaMenu* shortCutMenu = new ElaMenu("快捷菜单(&A)", this);
   shortCutMenu->setMenuItemHeight(27);
   shortCutMenu->addElaIconAction(ElaIconType::BoxCheck, "排序方式",
@@ -163,14 +163,12 @@ void MainWindow::setupUi() {
   statusText->setTextPixelSize(14);
   statusBar->addWidget(statusText);
   this->setStatusBar(statusBar);
-
 }
 void MainWindow::setupFunctionWidgets() {
-  //左侧按钮列表
+  // 左侧按钮列表
   addPageNode("HOME", new QWidget, ElaIconType::House);
   addPageNode("课表", new ScheduleWidget, ElaIconType::Calendar);
 }
-
 
 void MainWindow::setupToolbars() {}
 

@@ -1,4 +1,4 @@
-#include "gui/widgets/mainwindow.h"
+#include "gui/mainwindow.h"
 
 #include <ElaApplication.h>
 #include <QApplication>

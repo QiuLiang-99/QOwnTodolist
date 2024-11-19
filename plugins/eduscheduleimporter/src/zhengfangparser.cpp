@@ -1,5 +1,5 @@
 #include <QString>
-class ZhengFangParser(QString source, int type) : Parser(source) {
+/*class ZhengFangParser(QString source, int type) : Parser(source) {
 
   override fun generateCourseList() : List<Course> {
     val doc = org.jsoup.Jsoup.parse(source) val table1 =
@@ -226,3 +226,4 @@ data class ImportBean(
     : String, var   teacher
     : String ?, var room : String ?, var startNode : Int, var cDay
     : Int = 0)
+    */
