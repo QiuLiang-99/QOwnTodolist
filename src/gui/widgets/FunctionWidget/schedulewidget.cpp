@@ -2,15 +2,19 @@
 #include "ElaTableView.h"
 #include "ElaText.h"
 #include "core/schedule/scheduleparser.h"
+#include "gui/widgets/CalendarWidget.h"
 #include <QHeaderView>
 #include <QVBoxLayout>
 #include <qboxlayout.h>
 #include <qpushbutton.h>
 
 ScheduleWidget::ScheduleWidget(QWidget* parent) : FunctionWidget(parent) {
-  layout_             = new QVBoxLayout(this);
-  QPushButton* button = new QPushButton("导入", this);
-  layout_->addWidget(button);
+  layout_             = new QVBoxLayout;
+  QPushButton* button = new QPushButton("导入");
+  ////layout_->addWidget(button);
+  auto         test   = new CalendarWidget;
+  test->show();
+  ////layout_->addWidget(test);
   setLayout(layout_);
   connect(button, &QPushButton::clicked, this, []() {
     ScheduleParser::selectFile();
@@ -24,9 +28,9 @@ ScheduleWidget::~ScheduleWidget() {}
 
 void ScheduleWidget::setupUi() {
   // ElaTableView
-  ElaText* tableText = new ElaText("ElaTableView", this);
-  tableText->setTextPixelSize(18);
-  _tableView            = new ElaTableView(this);
+  ////ElaText* tableText = new ElaText("ElaTableView", this);
+  // tableText->setTextPixelSize(18);
+  _tableView            = new ElaTableView /* (this) */;
   QFont tableHeaderFont = _tableView->horizontalHeader()->font();
   tableHeaderFont.setPixelSize(16);
   _tableView->horizontalHeader()->setFont(tableHeaderFont);

@@ -69,3 +69,4 @@ int main(int argc, char* argv[]) {
   w.show();
   return a.exec();
 }
+// todo ctrl出新窗口 alt出悬浮窗

@@ -166,7 +166,7 @@ void MainWindow::setupUi() {
 }
 void MainWindow::setupFunctionWidgets() {
   // 左侧按钮列表
-  addPageNode("HOME", new QWidget, ElaIconType::House);
+  addPageNode("主页", new QWidget, ElaIconType::House);
   addPageNode("课表", new ScheduleWidget, ElaIconType::Calendar);
 }
 

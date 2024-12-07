@@ -12,7 +12,7 @@ class MainWindow : public ElaWindow {
   public:
     static MainWindow* instance();
 
-  public:
+  private:
     void setupUi();
     void setupToolbars();
     void setupFunctionWidgets();
@@ -20,7 +20,7 @@ class MainWindow : public ElaWindow {
     void storeSettings();
 
   private:
-  //void addFunctionWidget(QWidget* widget, const QString& title, const QString& iconPath);
-
+    // void addFunctionWidget(QWidget* widget, const QString& title, const
+    // QString& iconPath);
 };
 #endif // MAINWINDOW_H
