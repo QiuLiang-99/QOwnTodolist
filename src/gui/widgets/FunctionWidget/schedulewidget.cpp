@@ -12,7 +12,7 @@ ScheduleWidget::ScheduleWidget(QWidget* parent) : FunctionWidget(parent) {
   layout_             = new QVBoxLayout;
   QPushButton* button = new QPushButton("导入");
   ////layout_->addWidget(button);
-  auto         test   = new CalendarWidget;
+  auto         test   = new CalendarWidget(this);
   test->show();
   ////layout_->addWidget(test);
   setLayout(layout_);

@@ -1,12 +1,10 @@
 #ifndef CALENDARWIDGET_H
 #define CALENDARWIDGET_H
 
-#include <QButtonGroup>
+#include <QCalendarWidget>
 #include <QDate>
-#include <QGridLayout>
-#include <QPropertyAnimation>
-#include <QPushButton>
-#include <QStackedWidget>
+#include <QLabel>
+#include <QVBoxLayout>
 #include <QWidget>
 
 
@@ -16,27 +14,12 @@ class CalendarWidget : public QWidget {
   public:
     explicit CalendarWidget(QWidget* parent = nullptr);
 
-  private slots:
-    void onDateClicked(QAbstractButton* button);
-    void showPreviousMonth();
-    void showNextMonth();
-
   private:
-    void setupUI();
-    void updateCalendar(QWidget* monthWidget, const QDate& date);
+    QCalendarWidget* calendar;  // 日历控件
+    QLabel*          infoLabel; // 显示选中日期信息的标签
 
-    QStackedWidget* stackedWidget;
-    QButtonGroup*   buttonGroup;
-    QPushButton*    previousMonthButton;
-    QPushButton*    nextMonthButton;
-
-    QDate    currentDate;
-    QDate    displayedDate;
-    QWidget* currentMonthWidget;
-    QWidget* nextMonthWidget;
-
-    void animateToNextMonth();
-    void animateToPreviousMonth();
+  private slots:
+    void onDateSelected(const QDate& date); // 日期选中时的槽函数
 };
 
 #endif // CALENDARWIDGET_H
