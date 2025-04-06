@@ -13,8 +13,8 @@
 #include <QWebEngineView>
 
 MainWindow::MainWindow(QWidget* parent) : QWidget(parent) {
-  resize(1280, 720); // 设置默认大小，但不固定
   initUI();
+  resize(1280, 720); // 设置默认大小，但不固定
 }
 
 MainWindow::~MainWindow() {}
