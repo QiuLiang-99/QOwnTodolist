@@ -20,9 +20,6 @@ class MainWindow : public QWidget {
 
     QVBoxLayout*    layout;
     QWebEngineView* webView;
-
-  private:
-    void downloadAndSetIcon(QPushButton* btn, const QString& url);
 };
 
 #endif // MAINWINDOW_H
