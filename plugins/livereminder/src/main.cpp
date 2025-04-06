@@ -1,16 +1,13 @@
-#include "gui/signinwidget.h"
+#include "gui/mainwindow.h"
 
 #include <QApplication>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDesktopServices>
 
-#include <QTimer>
-#include <QUrl>
-
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
-  SignInWidget w;
+  MainWindow   w;
   w.show();
   return a.exec();
 }
