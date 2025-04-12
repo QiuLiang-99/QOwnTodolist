@@ -11,11 +11,11 @@ class PreviewWindowModel : public QObject {
     explicit PreviewWindowModel(QObject* parent = nullptr);
     ~PreviewWindowModel() override;
 
-  signals:
-    void previewUpdated(const QString& url);
+    // signals:
+    //   void previewUpdated(const QString& url);
 
-  public slots:
-    void updatePreview(const QString& url);
+    // public slots:
+    //   void updatePreview(const QString& url);
 
   private:
     QUrl currentUrl;
