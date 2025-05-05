@@ -7,13 +7,30 @@
 #include <QDesktopServices>
 #include <qlogging.h>
 
-#include "core/api.h"
+#include "gui/signinwidget.h"
+#include "core/streamfetcher.h"
 int main(int argc, char* argv[]) {
-  QApplication  a(argc, argv);
-  MainWindow    w;
-  PreviewWindow previewWindow;
-  previewWindow.show();
+  QApplication a(argc, argv);
+  MainWindow   w;
   w.show();
-  callApi();
+  ////PreviewWindow previewWindow;
+  ////previewWindow.show();
+  ////callApi();
+  SignInWidget s;
+  s.show();
+  LiveClient client;
+  const QString url = "https://www.huya.com/chuhe";
+  // 可选质量参数，例如 "TX" 或 "HW"，此处使用默认第一档
+  StreamData info = client.getStreamInfo(url, "TX");
+
+  qDebug() << "Anchor:" << info.anchorName;
+  if (!info.isLive) {
+      qDebug() << "The stream is currently offline.";
+  } else {
+      qDebug() << "Title: " << info.title;
+      qDebug() << "M3U8 URL: " << info.m3u8Url;
+      qDebug() << "FLV URL: " << info.flvUrl;
+      qDebug() << "Record URL: " << info.recordUrl;
+  }
   return a.exec();
 }
