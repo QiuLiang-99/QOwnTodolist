@@ -1,3 +1,4 @@
+#include "core/livestatusfetcher.h"
 #include "gui/mainwindow.h"
 #include "gui/previewwindow.h"
 
@@ -18,7 +19,7 @@ int main(int argc, char* argv[]) {
   ////callApi();
   SignInWidget s;
   s.show();
-  LiveClient client;
+  LiveStatusFetcher client;
   const QString url = "https://www.huya.com/chuhe";
   // 可选质量参数，例如 "TX" 或 "HW"，此处使用默认第一档
   StreamData info = client.getStreamInfo(url, "TX");

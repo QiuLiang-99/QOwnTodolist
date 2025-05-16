@@ -12,14 +12,13 @@
 #include <QObject>
 #include <QMap>
 #include <QByteArray>
-#include <memory>
 
 StreamFetcher::StreamFetcher(QObject* parent)
     : QObject(parent), manager(new QNetworkAccessManager(this)) {}
 
 QVariantMap StreamFetcher::fetchAppStreamData(const QString& url, bool processData) {
     QString roomId = QUrl(url).path().split('/', Qt::SkipEmptyParts).last();
-    if (roomId.contains(QRegularExpression("[A-Za-z]"))) {
+    if (roomId.contains(QRegularExpression("[A-Za-z]"))) {//todo 解耦
         QString html = syncGet(QUrl(url), mobileHeaders());
         QRegularExpression re("ProfileRoom\\\":(\\d+),\"sPrivateHost");
         auto match = re.match(html);
@@ -40,7 +39,7 @@ QVariantMap StreamFetcher::fetchAppStreamData(const QString& url, bool processDa
     QByteArray jsonStr = syncGet(apiUrl, pcHeaders());
     QJsonDocument doc = QJsonDocument::fromJson(jsonStr);
     QJsonObject root = doc.object();
-    return processData ? root.toVariantMap() : root.toVariantMap();
+    return processData ? root.toVariantMap() : root.toVariantMap();//bug 为什么是这样设计的
 }
 
 StreamData StreamFetcher::fetchStreamUrl(const QVariantMap& jsonData, const QString& quality) {
@@ -101,13 +100,4 @@ QMap<QString, QString> StreamFetcher::pcHeaders() const {
     return {{"User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64)..."}};
 }
 
-LiveClient::LiveClient(const QMap<QString, QString>& proxy, const QByteArray& cookies, QObject* parent)
-    : QObject(parent), proxySettings(proxy), cookieData(cookies) {}
-
-StreamData LiveClient::getStreamInfo(const QString& liveUrl, const QString& quality) {
-    if (!fetcher) { fetcher.reset(new StreamFetcher(this));
-}
-    auto jsonData = fetcher->fetchAppStreamData(liveUrl, true);
-    return fetcher->fetchStreamUrl(jsonData, quality);
-}
 
