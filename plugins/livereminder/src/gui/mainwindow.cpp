@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "previewwindow.h"
 
 #include <QBuffer>
 #include <QDebug>
@@ -57,9 +58,8 @@ void MainWindow::initUI() {
   leftLayout->addStretch(); // 按钮贴近顶部
 
   // 右侧自定义窗口
-  QWidget* customWidget = new QWidget;
+  QWidget* customWidget = new PreviewWindow;
   customWidget->setStyleSheet("background-color: lightgray;");
-  ////customWidget->setFixedSize(640, 360); // 16:9 占位符窗口
 
   // 添加到主布局
   mainLayout->addWidget(leftWidget);

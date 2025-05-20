@@ -1,6 +1,5 @@
 #include "core/livestatusfetcher.h"
 #include "gui/mainwindow.h"
-#include "gui/previewwindow.h"
 
 #include <QApplication>
 #include <QCoreApplication>
@@ -9,7 +8,6 @@
 #include <qlogging.h>
 
 #include "gui/signinwidget.h"
-#include "core/streamfetcher.h"
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
   MainWindow   w;
